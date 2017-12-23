@@ -3,6 +3,8 @@ package com.valoyes.projectjunit.helper;
 public class StringHelper {
 
 	/**
+	 * Helper class 
+	 * 
 	 * e.g : AACC => CD
 	 * e.g : ACD => CD
 	 * e.g : CDEF => CDEF
