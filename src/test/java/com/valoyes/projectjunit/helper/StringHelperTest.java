@@ -1,7 +1,9 @@
 package com.valoyes.projectjunit.helper;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -25,7 +27,14 @@ public class StringHelperTest {
 	private static final String CDAA = "CDAA";
 	private static final String CDEF = "CDEF";
 	private static final String CD = "CD";
-	StringHelper helper = new StringHelper();
+	StringHelper helper;
+	
+	@Before
+	public void septup() {
+		// en este caso no es realmente necesario, pero si fuera
+		// util actualizar/reinicializar la informacion ecc
+		helper = new StringHelper();
+	}
 	
 	@Test
 	public void casPassant_truncateAInFirst2Positions_Ainfirst2Positions() {
