@@ -16,6 +16,7 @@ import org.junit.Test;
  */
 public class StringHelperTest {
 
+	private static final String ABCD_STRING_CONSTANT = "ABCD";
 	private static final String CDAA_STRING_CONSTANT = "CDAA";
 	private static final String CDEF_STRING_CONSTANT = "CDEF";
 	private static final String CD_STRING_CONSTANT = "CD";
@@ -32,13 +33,26 @@ public class StringHelperTest {
 	}
 	
 	@Test
-	public void cassPassant_truncateAInFirst2Positions_NoAFoundInString() {
+	public void casPassant_truncateAInFirst2Positions_NoAFoundInString() {
 		assertEquals(CDEF_STRING_CONSTANT, helper.truncateAInFirst2Positions("CDEF"));
 	}
 	
 	@Test
-	public void cassPassant_truncateAInFirst2Positions_AIn2LastPositions() {
+	public void casPassant_truncateAInFirst2Positions_AIn2LastPositions() {
 		assertEquals(CDAA_STRING_CONSTANT, helper.truncateAInFirst2Positions("CDAA"));
 	}
+	
+	@Test
+	public void cassPassant_areFirstAndLastTwoCharactersTheSame_BasicNegativeScenario() {
+		// ABCD => false
+		assertFalse(helper.areFirstAndLastTwoCharactersTheSame(ABCD_STRING_CONSTANT));
+	}
+	
+	@Test
+	public void casPassant_areFirstAndLastTwoCharactersTheSame_BasicPositiveScenario() {
+		// ABAB => true
+	}
+		// AB => true
+		// A = false
 
 }
