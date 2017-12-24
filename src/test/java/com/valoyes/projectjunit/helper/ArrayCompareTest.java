@@ -43,5 +43,17 @@ public class ArrayCompareTest {
 		int[] numbers = null;
 		Arrays.sort(numbers);
 	}
+	
+	// Quiero verificar si puedo hacer 1.000.000 sorts en el intervalo
+	// de una decima de segundo
+	@Test(timeout=100)
+	public void testSort_Performance() {
+		int array[] = {12, 23, 4};
+		for(int i = 1; i <= 10; i++) {
+			// de esta manera no tendremos siemrpe el mismo array
+			array[0] = i;
+			Arrays.sort(array);
+		}
+	}
 
 }
